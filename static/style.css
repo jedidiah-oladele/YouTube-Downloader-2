@@ -1,0 +1,58 @@
+body {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    align-items: center;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.thumbnail {
+    width: 420px;
+    height: 240px;
+    margin-right: 10px;
+    margin-left: 100px;
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.duration {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.channel {
+    font-style: italic;
+    text-align: left;
+}
+
+
+.download-button {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.radio-group {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+  }
+  

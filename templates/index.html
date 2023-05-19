@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <head>
+        <title>YouTube Downloader</title>
+    </head>
+
+    <body>
+        <h1>YouTube Downloader</h1>
+        <form method="POST" action="/">
+            <input type="text" name="submitted_url" placeholder="YouTube URL">
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if video_data %}
+
+        {% for video in video_data %}
+        <div class="video-container">
+            <img class="thumbnail" src="{{ video['thumbnail_url'] }}" alt="Video Thumbnail">
+            <div class="video-details">
+                <h2 class="title">{{ video['title'] }}</h2>
+                <p class="duration">{{ video['duration'] }}</p>
+                <p class="channel">{{ video['channel_title'] }}</p>
+                <a class="download-button" href="{{ video['download_link'] }}" target="_blank" alt="Download Button">Download</a>
+                <input type="button" onclick="alert('Hello World!')" value="Download">
+                
+                <div class="radio-group"></div>
+                <form>
+                {% for res in video['video_resolutions'] %}
+                    <input type="radio" id="{{res}}" name="resolution_options" value="{{res}}">
+                    <label for="{{res}}">{{res}}</label><br>
+                {% endfor %}
+                </form>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        {% elif invalid_url%}
+        <h2>Invalid YouTube Video URL!</h2>
+        {% endif %}
+    </body>
+</html>
+
+
+
+
+
