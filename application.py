@@ -15,10 +15,10 @@ from helperfunctions import *
 
 load_dotenv()
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route("/", methods=["GET", "POST"])
+@application.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         submitted_url = request.form["submitted_url"]
@@ -59,4 +59,4 @@ def return_youtube_data(url):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
